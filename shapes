@@ -1,0 +1,135 @@
+package com.ooproject.shapes; 
+ 
+public class Circle extends Shape { 
+    private double radius; 
+    public Circle(String color, double radius) { 
+        super(color); 
+        this.radius = radius; 
+    } 
+    public double getRadius() { 
+        return radius; 
+    } 
+    public void setRadius(double radius) { 
+        this.radius = radius; 
+    } 
+    //Override 
+    public void display() { 
+        System.out.println("Shape: Circle"); 
+        super.display(); 
+    } 
+    public double calculateArea() { 
+        return Math.PI * radius * radius; 
+    } 
+    public double calculatePerimeter() { 
+        return 2 * Math.PI * radius; 
+    } 
+ 
+}
+///////////
+
+
+package com.ooproject.shapes; 
+ 
+public class Main { 
+    public static void main(String[] args) { 
+        Circle circle = new Circle("Red", 5.0); 
+        System.out.println("Circle Area: " + circle.calculateArea()); 
+        System.out.println("Circle Perimeter: " + circle.calculatePerimeter()); 
+        circle.display(); 
+        Rectangle rectangle = new Rectangle("Green", 4.0, 6.0); 
+        System.out.println("Rectangle Area: " + rectangle.calculateArea()); 
+        System.out.println("Rectangle Perimeter: " + rectangle.calculatePerimeter()); 
+        rectangle.display(); 
+        Triangle triangle = new Triangle("Blue", 3.0, 4.0); 
+        System.out.println("Triangle Area: " + triangle.calculateArea()); 
+        System.out.println("Triangle Perimeter: " + triangle.calculatePerimeter()); 
+        triangle.display(); 
+    } 
+}
+//
+package com.ooproject.shapes; 
+ 
+public class Rectangle extends Shape { 
+    private double length; 
+    private double width; 
+    public Rectangle(String color, double length, double width) { 
+        super(color); 
+        this.length = length; 
+        this.width = width; 
+    } 
+    public double getLength() { 
+        return length; 
+    } 
+    public void setLength(double length) { 
+        this.length = length; 
+    } 
+    public double getWidth() { 
+        return width; 
+    } 
+    public void setWidth(double width) { 
+        this.width = width; 
+    } 
+    //Override 
+    public void display() { 
+        System.out.println("Shape: Rectangle"); 
+        super.display(); 
+    } 
+    public double calculateArea() { 
+        return length * width; 
+    } 
+    public double calculatePerimeter() { 
+        return 2 * (length + width); 
+    } 
+}
+//
+package com.ooproject.shapes; 
+ 
+public class Shape { 
+    private String color; 
+    public Shape(String color) { 
+        this.color = color; 
+    } 
+    public String getColor() { 
+        return color; 
+    } 
+    public void setColor(String color) { 
+        this.color = color; 
+    } 
+    public void display() { 
+        System.out.println("Color: " + color); 
+    } 
+}
+//
+package com.ooproject.shapes; 
+ 
+public class Triangle extends Shape { 
+    private double base; 
+    private double height; 
+    public Triangle(String color, double base, double height) { 
+        super(color); 
+        this.base = base; 
+        this.height = height; 
+    } 
+    public double getBase() { 
+        return base; 
+    } 
+    public void setBase(double base) { 
+        this.base = base; 
+    } 
+    public double getHeight() { 
+        return height; 
+    } 
+    public void setHeight(double height) { 
+        this.height = height; 
+    } 
+    //Override 
+    public void display() { 
+        System.out.println("Shape: Triangle"); 
+        super.display(); 
+    } 
+    public double calculateArea() { 
+        return 0.5 * base * height; 
+    } 
+    public double calculatePerimeter() { 
+        return base + 2 * Math.sqrt(base * base / 4 + height * height);} 
+}
